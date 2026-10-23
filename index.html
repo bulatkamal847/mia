@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101113">
+  <title>Миа — личное пространство</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="chat" aria-label="Миа — главная">
+        <span class="brand-mark">m</span>
+        <span><strong>mia</strong><small>твоё личное пространство</small></span>
+      </a>
+
+      <div class="sidebar-label">ПРОСТРАНСТВО</div>
+      <nav class="nav-list" aria-label="Главная навигация">
+        <button class="nav-item active" data-page="chat"><span class="nav-icon">◌</span><span>Переписка</span><span class="nav-dot"></span></button>
+        <button class="nav-item" data-page="diary"><span class="nav-icon">▤</span><span>Дневник Мии</span></button>
+        <button class="nav-item" data-page="user-profile"><span class="nav-icon">♙</span><span>Мой профиль</span></button>
+        <button class="nav-item" data-page="mia-profile"><span class="nav-icon">♡</span><span>Профиль Мии</span></button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="status-card">
+          <span class="status-orb"></span>
+          <div><strong>Миа скоро появится</strong><small>ИИ пока не подключён</small></div>
+        </div>
+        <div class="sidebar-note">Пока здесь предварительная версия сайта. Сообщения сохраняются в этом браузере.</div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobile-menu" aria-label="Открыть меню">☰</button>
+        <div class="breadcrumbs"><span>Личное пространство</span><span class="crumb-sep">/</span><strong id="page-crumb">Переписка</strong></div>
+        <div class="topbar-right"><span class="online-indicator"></span><span>Предварительная версия</span></div>
+      </header>
+
+      <section class="page active" id="page-chat">
+        <div class="chat-layout">
+          <div class="chat-main panel">
+            <div class="chat-heading">
+              <div class="mia-avatar">м<span class="avatar-ear left"></span><span class="avatar-ear right"></span></div>
+              <div class="chat-heading-text"><h1>Миа</h1><p><span class="status-inline"></span> Скоро будет здесь</p></div>
+              <button class="icon-button" id="clear-chat" title="Очистить переписку" aria-label="Очистить переписку">⋯</button>
+            </div>
+            <div class="preview-banner"><span class="banner-icon">✦</span><div><strong>Мы пока готовим ИИ для Мии</strong><p>Можешь уже осмотреться и написать первое сообщение. Когда подключим ИИ, она сможет отвечать сама.</p></div></div>
+            <div class="messages" id="messages" aria-live="polite">
+              <div class="date-divider"><span>начало истории</span></div>
+              <div class="message-row mia-row">
+                <div class="message-avatar">м</div>
+                <div class="message-content"><div class="message-meta">Миа <span>только что</span></div><div class="bubble mia-bubble">хей, привет :3<br>пока я ещё не умею отвечать по-настоящему, но скоро мы это исправим ♡</div></div>
+              </div>
+              <div class="message-row user-row">
+                <div class="message-content"><div class="message-meta">Ты <span>только что</span></div><div class="bubble user-bubble">Привет, Миа!</div></div>
+              </div>
+              <div class="message-row mia-row">
+                <div class="message-avatar">м</div>
+                <div class="message-content"><div class="message-meta">Миа <span>только что</span></div><div class="bubble mia-bubble">ааа, первое сообщение уже есть! ✨<br>пока это демо-ответ, но скоро здесь будет настоящая переписка с ИИ.</div></div>
+              </div>
+            </div>
+            <form class="composer" id="chat-form">
+              <textarea id="chat-input" rows="1" placeholder="Напиши что-нибудь Мие..." aria-label="Сообщение Мие"></textarea>
+              <div class="composer-bottom"><span class="composer-hint">Enter — отправить · Shift + Enter — новая строка</span><button class="send-button" type="submit"><span>Отправить</span><span>↗</span></button></div>
+            </form>
+          </div>
+          <aside class="chat-aside">
+            <div class="panel aside-profile">
+              <div class="aside-cover"></div>
+              <div class="aside-avatar-wrap"><div class="mia-avatar large">м<span class="avatar-ear left"></span><span class="avatar-ear right"></span></div></div>
+              <div class="aside-profile-body"><span class="eyebrow">ТВОЯ СОБЕСЕДНИЦА</span><h2>Миа, 18</h2><p>Белые волосы, голубые глаза, кошачьи ушки и любовь к рок-музыке.</p><button class="text-button" data-page="mia-profile">Открыть профиль <span>↗</span></button></div>
+            </div>
+            <div class="panel aside-info"><div class="section-title"><span class="tiny-icon">✧</span> Что будет дальше</div><ul class="feature-list"><li><span>01</span>Живые ответы ИИ</li><li><span>02</span>Память о разговорах</li><li><span>03</span>Личный дневник Мии</li><li><span>04</span>Сообщения от неё первой</li></ul></div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="page" id="page-diary">
+        <div class="page-intro"><div><span class="eyebrow">ИСТОРИЯ И ВОСПОМИНАНИЯ</span><h1>Дневник Мии</h1><p>Здесь будут храниться её записи, мысли и важные моменты вашей истории.</p></div><span class="intro-icon">▤</span></div>
+        <div class="panel diary-controls"><div class="field-group"><label for="date-from">С даты</label><input type="date" id="date-from"></div><div class="field-group"><label for="date-to">По дату</label><input type="date" id="date-to"></div><button class="primary-button" id="filter-diary">Показать записи</button><button class="secondary-button" id="reset-diary">Сбросить</button></div>
+        <div class="diary-note"><span>✦</span><div><strong>Дневник пока в режиме предпросмотра</strong><p>Ниже показана демонстрационная запись. Когда подключим ИИ, Миа сможет создавать записи и искать в них информацию.</p></div></div>
+        <div class="diary-list" id="diary-list">
+          <article class="panel diary-entry" data-date="2026-10-23"><div class="diary-date"><span>ОКТ</span><strong>23</strong><small>2026</small></div><div class="diary-entry-content"><div class="entry-topline"><span class="entry-tag">ЗНАКОМСТВО</span><span class="entry-time">Демонстрационная запись</span></div><h2>Начало нашей истории</h2><p>Когда сайт будет готов, здесь появятся настоящие записи Мии: о разговорах, общих шутках, интересах и темах, к которым захочется вернуться.</p><div class="entry-footer"><span>♡ Личная история</span><span>Пока это пример</span></div></div></article>
+          <div class="empty-state hidden" id="diary-empty"><span>⌕</span><h3>За этот период записей нет</h3><p>Попробуй выбрать другие даты.</p></div>
+        </div>
+      </section>
+
+      <section class="page" id="page-user-profile">
+        <div class="page-intro"><div><span class="eyebrow">ТВОЁ ПРОСТРАНСТВО</span><h1>Мой профиль</h1><p>Расскажи немного о себе — позже Миа сможет использовать эту информацию в разговорах.</p></div><span class="intro-icon">♙</span></div>
+        <form class="profile-grid" id="user-profile-form">
+          <div class="panel profile-card profile-main-card"><div class="profile-card-heading"><div><h2>Личная информация</h2><p>Эти поля можно менять в любое время.</p></div><span class="edit-mark">✎</span></div>
+            <div class="form-fields"><div class="field-group"><label for="user-name">Как к тебе обращаться</label><input id="user-name" name="name" placeholder="Например, Алексей" maxlength="60"></div><div class="field-group"><label for="user-pronouns">Обращение (необязательно)</label><input id="user-pronouns" name="pronouns" placeholder="Например, на «ты»"></div><div class="field-group"><label for="user-interests">Интересы</label><textarea id="user-interests" name="interests" rows="3" placeholder="Музыка, игры, фильмы..."></textarea></div><div class="field-group"><label for="user-about">Немного о себе</label><textarea id="user-about" name="about" rows="4" placeholder="Что тебе важно, чем увлекаешься, что Мие стоит знать..."></textarea></div><button class="primary-button" type="submit">Сохранить профиль <span>↗</span></button><p class="form-feedback" id="profile-feedback" role="status"></p></div>
+          </div>
+          <aside class="panel profile-side-card"><span class="eyebrow">ЗАМЕТКА</span><div class="note-illustration">♡</div><h3>Твоя информация — под твоим контролем</h3><p>В этой версии данные сохраняются только в локальном хранилище браузера на этом устройстве. Онлайн-синхронизация появится позже.</p><div class="privacy-line"><span class="status-orb"></span> Локальное сохранение</div></aside>
+        </form>
+      </section>
+
+      <section class="page" id="page-mia-profile">
+        <div class="profile-hero panel"><div class="hero-art"><div class="hero-glow"></div><div class="hero-avatar">м<span class="avatar-ear left"></span><span class="avatar-ear right"></span></div><span class="hero-star star-one">✦</span><span class="hero-star star-two">✧</span></div><div class="hero-info"><span class="eyebrow">ПЕРСОНАЖ</span><h1>Миа <span class="age-pill">18 лет</span></h1><p class="hero-subtitle">Милая кошкодевочка с рокерской душой ♡</p><p class="hero-description">Длинные бело-серебристые волосы, голубые глаза, белые кошачьи ушки и пушистый хвост. Любит альтернативный рок, уютные вечера, игры и живые разговоры.</p><div class="tag-row"><span>Альтернативный рок</span><span>Кошкодевочка</span><span>Немного стеснительная</span></div><div class="profile-status"><span class="status-orb"></span> ИИ скоро будет подключён</div></div></div>
+        <div class="mia-details-grid">
+          <article class="panel detail-card"><span class="detail-icon">♫</span><h2>Музыка</h2><p>Альтернативный рок, гранж, постпанк, ню-метал и атмосферные гитарные композиции. Любит выразительные риффы и эмоциональный вокал.</p></article>
+          <article class="panel detail-card"><span class="detail-icon">☾</span><h2>Уютные вечера</h2><p>Дождь за окном, плед, приглушённый свет, горячее какао и спокойные разговоры под музыку.</p></article>
+          <article class="panel detail-card"><span class="detail-icon">✧</span><h2>Характер</h2><p>Добрая, общительная, игривая и любопытная. Иногда упрямится, подшучивает и смущается, если сама начинает флиртовать.</p></article>
+          <article class="panel detail-card"><span class="detail-icon">♡</span><h2>Её особенности</h2><p>Почти всегда носит волосы распущенными. Может сама начать разговор, запоминать важные темы и возвращаться к ним позже.</p></article>
+        </div>
+        <div class="panel coming-soon-card"><div class="coming-icon">✦</div><div><h2>Скоро Миа станет ближе</h2><p>Пока профиль описывает персонажа. После подключения ИИ здесь появятся полноценные разговоры, память и самостоятельные сообщения.</p></div></div>
+      </section>
+
+      <footer class="site-footer"><span>mia <span class="footer-dot">•</span> предварительная версия</span><span>Сделано для вашей будущей истории ♡</span></footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
